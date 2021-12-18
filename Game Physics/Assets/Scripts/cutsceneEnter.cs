@@ -13,6 +13,9 @@ public class cutsceneEnter : MonoBehaviour
         {
             cutsceneCam.SetActive(true);
             thePlayer.SetActive(false);
+
         }
     }
+
+  
 }
