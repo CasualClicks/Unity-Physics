@@ -7,7 +7,7 @@ public class GrapplingGun : MonoBehaviour
     private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
-    private float maxDistance = 100f;
+    private float maxDistance = 80f;
     private SpringJoint joint;
 
     void Awake()
@@ -27,15 +27,12 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    //Called after Update
     void LateUpdate()
     {
         DrawRope();
     }
 
-    /// <summary>
-    /// Call whenever we want to start a grapple
-    /// </summary>
+  
     void StartGrapple()
     {
         RaycastHit hit;
@@ -52,7 +49,7 @@ public class GrapplingGun : MonoBehaviour
             joint.maxDistance = distanceFromPoint * 0.8f;
             joint.minDistance = distanceFromPoint * 0.25f;
 
-            //Adjust these values to fit your game.
+          
             joint.spring = 4.5f;
             joint.damper = 7f;
             joint.massScale = 4.5f;
@@ -63,9 +60,7 @@ public class GrapplingGun : MonoBehaviour
     }
 
 
-    /// <summary>
-    /// Call whenever we want to stop a grapple
-    /// </summary>
+   
     void StopGrapple()
     {
         lr.positionCount = 0;
