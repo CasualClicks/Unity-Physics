@@ -5,14 +5,18 @@ using UnityEngine;
 public class cutSceneEnterStart : MonoBehaviour
 {
     public GameObject thePlayer;
-    public GameObject cutsceneCam;
+    public Camera mainCamera;
+    public Camera cutsceneCam;
+    public Animator animator;
 
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            cutsceneCam.SetActive(true);
+            cutsceneCam.enabled = true;
+            animator.enabled = true;
+            mainCamera.enabled = false;
             thePlayer.SetActive(false);
             StartCoroutine(FinishCut());
         }
@@ -20,8 +24,10 @@ public class cutSceneEnterStart : MonoBehaviour
 
     IEnumerator FinishCut()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(18);
+        mainCamera.enabled = true;
         thePlayer.SetActive(true);
-        cutsceneCam.SetActive(false);
+        cutsceneCam.enabled = false;
+        animator.enabled = false;
     }
 }

@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cutsceneEnter : MonoBehaviour
+public class testTrigger : MonoBehaviour
 {
     public GameObject thePlayer;
     public Camera mainCamera;
     public Camera cutsceneCam;
     public Animator animator;
 
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
             cutsceneCam.enabled = true;
             animator.enabled = true;
             mainCamera.enabled = false;
@@ -23,7 +24,10 @@ public class cutsceneEnter : MonoBehaviour
 
     IEnumerator FinishCut()
     {
-        yield return new WaitForSeconds(27);
-        // code from here to change scene to end scene (above code will wait for 27 sec to let camera animation finish then will execute below code)
+        yield return new WaitForSeconds(5);
+        mainCamera.enabled = true;
+        thePlayer.SetActive(true);
+        cutsceneCam.enabled = false;
+        animator.enabled = false;
     }
 }
