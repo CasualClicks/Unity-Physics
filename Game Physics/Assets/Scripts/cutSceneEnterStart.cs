@@ -18,6 +18,7 @@ public class cutSceneEnterStart : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             cutsceneCam.enabled = true;
             animator.enabled = true;
+            RenderSettings.fog = false;
             before.Pause();
             trigger.Play();
             mainCamera.enabled = false;
@@ -31,6 +32,7 @@ public class cutSceneEnterStart : MonoBehaviour
         yield return new WaitForSeconds(18);
         mainCamera.enabled = true;
         thePlayer.SetActive(true);
+        RenderSettings.fog = true;
         trigger.Pause();
         before.Play();
         cutsceneCam.enabled = false;
