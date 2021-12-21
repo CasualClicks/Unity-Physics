@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cutSceneEnterStart : MonoBehaviour
+public class semi_endCamTrigger : MonoBehaviour
 {
     public GameObject thePlayer;
     public Camera mainCamera;
@@ -28,11 +28,9 @@ public class cutSceneEnterStart : MonoBehaviour
 
     IEnumerator FinishCut()
     {
-        yield return new WaitForSeconds(18);
+        yield return new WaitForSeconds(9);
         mainCamera.enabled = true;
         thePlayer.SetActive(true);
-        trigger.Pause();
-        before.Play();
         cutsceneCam.enabled = false;
         animator.enabled = false;
     }

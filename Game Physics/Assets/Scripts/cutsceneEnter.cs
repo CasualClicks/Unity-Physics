@@ -8,13 +8,17 @@ public class cutsceneEnter : MonoBehaviour
     public Camera mainCamera;
     public Camera cutsceneCam;
     public Animator animator;
+    public AudioSource before;
+    public AudioSource trigger;
 
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             cutsceneCam.enabled = true;
             animator.enabled = true;
+            before.Pause();
+            trigger.Play();
             mainCamera.enabled = false;
             thePlayer.SetActive(false);
             StartCoroutine(FinishCut());
