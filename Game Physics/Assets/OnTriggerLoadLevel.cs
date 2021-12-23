@@ -8,10 +8,11 @@ public class OnTriggerLoadLevel : MonoBehaviour
 
     public GameObject enterText;
     public string levelToLoad;
-
+    private GameMaster gm;
     void Start()
     {
         enterText.SetActive(false);
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
@@ -20,8 +21,8 @@ public class OnTriggerLoadLevel : MonoBehaviour
         if (plyr.gameObject.tag == "Player")
         {
             enterText.SetActive(true);
-            
-                SceneManager.LoadScene(levelToLoad);
+            SceneManager.LoadScene(levelToLoad);
+            transform.position = gm.lastcheckpos;
             
         }
     }

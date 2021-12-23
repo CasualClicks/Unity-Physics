@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Game Physics/Assets/Scenes/MainGame.unity.meta
 guid: 9fc0d4010bbf28b4594072e72b8655ab
+=======
+guid: 1a365c92f71ebec4fa570a65c1d94dff
+folderAsset: yes
+>>>>>>> 859612dec56180d768d04b104efd5c4ac5c6ea54:Game Physics/Assets/Noise Settings.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

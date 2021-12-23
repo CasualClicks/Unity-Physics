@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Game Physics/Assets/Scenes/GameChange.unity.meta
 guid: a10f6aeb21006f44fba57098159fc149
+=======
+guid: 1c3c291fe0969435093e563ddf2ded74
+folderAsset: yes
+>>>>>>> 859612dec56180d768d04b104efd5c4ac5c6ea54:Game Physics/Assets/Noise Settings/Clouds Test.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

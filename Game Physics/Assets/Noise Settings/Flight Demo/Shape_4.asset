@@ -18,4 +18,12 @@ MonoBehaviour:
   numDivisionsC: 50
   persistence: 0.5
   tile: 1
+<<<<<<< HEAD
+<<<<<<< HEAD
+  invert: 0
+=======
   invert: 1
+>>>>>>> 859612dec56180d768d04b104efd5c4ac5c6ea54
+=======
+  invert: 1
+>>>>>>> 859612dec56180d768d04b104efd5c4ac5c6ea54
