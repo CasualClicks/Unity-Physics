@@ -13,17 +13,18 @@ public class cutSceneEnterStart : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        int count = -1;
+        if (other.gameObject.tag == "Player" && count == -1)
         {
             this.gameObject.GetComponent<BoxCollider>().enabled = false;
             cutsceneCam.enabled = true;
             animator.enabled = true;
-            RenderSettings.fog = false;
             before.Pause();
             trigger.Play();
             mainCamera.enabled = false;
             thePlayer.SetActive(false);
             StartCoroutine(FinishCut());
+            count = 0;
         }
     }
 
@@ -32,7 +33,6 @@ public class cutSceneEnterStart : MonoBehaviour
         yield return new WaitForSeconds(18);
         mainCamera.enabled = true;
         thePlayer.SetActive(true);
-        RenderSettings.fog = true;
         trigger.Pause();
         before.Play();
         cutsceneCam.enabled = false;
